@@ -1,2 +1,4 @@
 # PPI
-Este projeto terá a ultima versão atualizada do Projeto de Pratica Profissional
+- Este projeto terá a ultima versão atualizada do Projeto de Pratica Profissional
+- Usando PDO
+
