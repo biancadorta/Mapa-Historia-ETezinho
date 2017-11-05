@@ -12,7 +12,7 @@
 
   //Pegar os dados do formulário
   $nome  = $_POST['nome'];
-  $senha = $_POST['senha'];
+  $senha = md5($_POST['senha']);
 
   $sql = "SELECT nome, senha FROM Usuario where nome='$nome' and senha='$senha'";
 
