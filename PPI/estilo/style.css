@@ -1,0 +1,94 @@
+html {
+  background: #5c789f;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Roboto", Helvetica, sans-serif;
+}
+
+h1{
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 30pt;
+}
+
+#divDaLinhaDoTempo{
+  position: relative;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#linha{
+  position: relative;
+  top: -21px;
+  z-index: 70;
+}
+
+.BolaDaLinha1{position: relative; left: 350px; z-index: 80;}
+.BolaDaLinha2{position: relative; left: 0px; z-index: 80;}
+.BolaDaLinha3{position: relative; left: -345px; z-index: 80;}
+.BolaDaLinha4{position: relative; top: 0px; left: 297px; z-index: 90;}
+
+.janela{
+  left: 355px;
+  top: 475px;
+}
+.janela2{
+  left: 205px;
+  top: 245px;
+}
+.janela3{
+  left: 620px;
+  top: 237px;
+}
+.janela4{
+  left: 900px;
+  top: 170px;
+}
+.janela5{
+  left: 940px;
+  top: 320px;
+}
+.janela6{
+  left: 690px;
+  top: 420px;
+}
+.janela7{
+  left: 1140px;
+  top: 590px;
+}
+.janela, .janela2, .janela3, .janela4, .janela5, .janela6, .janela7{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  transition: 0.7s;
+  z-index: 80;
+}
+.janela:hover,.janela2:hover, .janela3:hover, .janela4:hover, .janela5:hover, .janela6:hover, .janela7:hover{
+  left: 10%;
+  top: 25%;
+  width: 80%;
+  height: 80%;
+  transition: 0.4s;
+  border-radius: 30px;
+  background-color: white;
+  opacity: 0.8;
+  transition: 0.7s;
+  z-index: 99;
+}
+
+.rosa{
+  z-index: 99;
+}
+
+.distribution-map {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
