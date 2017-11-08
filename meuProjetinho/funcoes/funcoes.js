@@ -4,24 +4,29 @@ var imgFundo = new Image();
     imgFundo.src = "imagens/mapinha1.png";
 var imgAlien = new Image();
 	imgAlien.src = "imagens/alien.png";
-var imgRosa = new Image();
-    imgRosa.src = "imagens/rosaVentos.png";
 
-var xAlien=425;
+var xAlien=420;
 var yAlien=500;
-var xRosa =120;
-var yRosa =640;
-
-function Janela(){
-    $("#wyw").html("dados.php");
-}
 
 function Iniciar(){
     objCanvas   = document.getElementById("meuCanvas");
     objContexto = objCanvas.getContext("2d");
     objContexto.drawImage(imgFundo,0,0);
 
+    abrir();
+
     AtualizaTela();
+}
+
+function abrir(){
+    $("#infos").slideUp(0);
+    $("#janelaInfo").slideUp(0);
+    $("#professores").slideUp(0);              
+}
+
+function AtualizaTela(){
+    objContexto.drawImage(imgFundo,0,0);
+    objContexto.drawImage(imgAlien,xAlien,yAlien);
 }
 
 function TesteTecla(event){
@@ -46,12 +51,6 @@ function VerificaMapa(qualMapa){
 	AtualizaTela();
 }
 
-function AtualizaTela(){
-	objContexto.drawImage(imgFundo,0,0);
-	objContexto.drawImage(imgAlien,xAlien,yAlien);
-    objContexto.drawImage(imgRosa,xRosa,yRosa);
-}
-
 function MovimentoAlien(direcao){
     switch (direcao){
     case 38:yAlien=(yAlien - 10); break;
@@ -61,9 +60,9 @@ function MovimentoAlien(direcao){
     }
 
     if(xAlien>1570)
-        xAlien=25
+        xAlien=20
     else
-    if(xAlien<25)
+    if(xAlien<20)
         xAlien=1570;
 
     if(yAlien>760)
@@ -72,8 +71,29 @@ function MovimentoAlien(direcao){
     if(yAlien<0)
         yAlien=760;
 
-    if(xAlien!=0)
-        $("#janela").addClass(".janela:hover");
+    if(xAlien==20){
+        $("#janelaInfo").slideDown(1000);
+        lblX.innerHTML=xAlien;
+        lblY.innerHTML=yAlien;
+    }
 
     AtualizaTela();
+}
+
+function clicouRosa(){
+    $(".rosa").toggleClass('open');
+    $("#professores").slideToggle(1000);
+}
+
+function clicouMenu(){
+    $("#infos").slideToggle(500);
+    $(".menu").toggleClass('open');
+}
+
+function clicouJanela(){
+    $("#janelaInfo").slideDown(1000);
+}
+
+function clicouInfo(){
+    $("#janelaInfo").slideUp(1000);
 }

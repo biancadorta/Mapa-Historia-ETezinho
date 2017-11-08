@@ -9,22 +9,14 @@
         <script src="funcoes/jquery-3.2.1.js"></script>
     </head>
 <body onload="Iniciar();" onkeydown="TesteTecla(event);">
+    <h1><label id="lblX">WARMAP</label><label id="lblY">WARMAP</label></h1>
 
-    <h1>WARMAP</h1>
+    <div id="menu" class="menu" onclick="clicouMenu();"><img src="imagens/nave3.png"></div>
+    <div id="infos"></div>
     
     <center>
-    <canvas id="meuCanvas" width="1606" height="798" class="distribution-map">
+    <canvas id="meuCanvas" width="1606px" height="798px" top="100px">
     </canvas>
-
-    <div id="divDasJanelas">
-        <div class="janela"  name="janela" id="xyw"><img src="imagens/ponto.png"></div>
-        <div class="janela2" name="janela"><img src="imagens/ponto.png"></div>
-        <div class="janela3" name="janela"><img src="imagens/ponto.png"></div>
-        <div class="janela4" name="janela"><img src="imagens/ponto.png"></div>
-        <div class="janela5" name="janela"><img src="imagens/ponto.png"></div>
-        <div class="janela6" name="janela"><img src="imagens/ponto.png"></div>
-        <div class="janela7" name="janela"><img src="imagens/ponto.png"></div>
-    </div>
 
     <div id="divDaLinhaDoTempo">
         <img src="imagens/bolinha1.png" class="BolaDaLinha1" name="bolas" onclick="VerificaMapa(1);">
@@ -32,23 +24,22 @@
         <img src="imagens/bolinha1.png" class="BolaDaLinha3" name="bolas" onclick="VerificaMapa(3);">
         <img src="imagens/bolinha2.png" class="BolaDaLinha4" name="bolas" onclick="VerificaMapa('qualMapa');">
     </div>
+        <img src="imagens/linhaDoTempo.png" id="linha">
 
-    <img src="imagens/linhaDoTempo.png" id="linha">
+    <div id="principal" class="principal">
+        <img src="imagens/rosaVentos.png" id="rosa" class="rosa" onclick="clicouRosa();">
+
+        <div id="janelaInfo" onclick="clicouInfo();"></div>
+        <div id="professores"></div>
+
+        <img src="imagens/ponto.png" id="janela1" onclick="clicouJanela();">
+        <img src="imagens/ponto.png" id="janela2" onclick="clicouJanela();">
+        <img src="imagens/ponto.png" id="janela3" onclick="clicouJanela();">
+        <img src="imagens/ponto.png" id="janela4" onclick="clicouJanela();">
+        <img src="imagens/ponto.png" id="janela5" onclick="clicouJanela();">
+        <img src="imagens/ponto.png" id="janela6" onclick="clicouJanela();">
+        <img src="imagens/ponto.png" id="janela7" onclick="clicouJanela();">
+    </div>    
     </center>
-
-    <script type="text/javascript">
-      $('#xyw').hover(function(){
-            var pagina = "dados.html";
-            $('#xyw').load(pagina);
-        },
-            function(){
-            $("#xyw").html(pagina);
-      });
-
-      $('#xyw').mouseout(function(){
-            window.location.reload();            
-      });
-  </script>
-
 </body>
 </html>
